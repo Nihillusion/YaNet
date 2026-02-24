@@ -47,6 +47,7 @@ const args =
         mode: 'default',
         ipv6: false,
         logLevel: 'error',
+        githubProxy: 'https://ghfast.top/',
       }
 
 /**
@@ -66,6 +67,7 @@ let {
   mode = args.mode || '',
   ipv6 = args.ipv6 || false,
   logLevel = args.logLevel || 'error',
+  githubProxy = args.githubProxy || 'https://ghfast.top/',
 } = args
 
 /**
@@ -662,12 +664,10 @@ function main(config) {
     'dns-hijack': ['any:53', 'tcp://any:53'],
   }
   config['geox-url'] = {
-    geoip:
-      'https://cdn.gh-proxy.org/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat',
-    geosite:
-      'https://cdn.gh-proxy.org/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat',
-    mmdb: 'https://cdn.gh-proxy.org/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb',
-    asn: 'https://cdn.gh-proxy.org/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb',
+    geoip: `${githubProxy}https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat`,
+    geosite: `${githubProxy}https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat`,
+    mmdb: `${githubProxy}https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb`,
+    asn: `${githubProxy}https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb`,
   }
 
   config.proxies.push({
