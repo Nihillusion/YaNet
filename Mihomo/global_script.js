@@ -597,7 +597,7 @@ function main(config) {
   config['tproxy-port'] = 7892
   config['external-ui'] = 'ui'
   config['external-ui-url'] =
-    'https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip'
+    `${githubProxy}https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip`
   config['dns'] = dnsConfig
   config['profile'] = {
     'store-selected': true,
