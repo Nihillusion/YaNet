@@ -294,7 +294,7 @@ const dnsConfig = {
     'geosite:google',
     'geosite:amazon',
     'geosite:category-bank-jp',
-    'geosite:category-bank-cn@!cn',
+    // 'geosite:category-bank-cn@!cn',
   ],
   nameserver: chinaDNS,
   'default-nameserver': defaultDNS,
